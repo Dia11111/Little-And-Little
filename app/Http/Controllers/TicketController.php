@@ -42,7 +42,7 @@ class TicketController extends Controller
                 'slug_ve' => 'required|unique:ticket|max:255',
                 'mota' => 'required',
                 'soluong' => 'required',
-                'giave' => 'required',
+                'giave' => 'required|numeric|min:0',
                 'tinhtrang' => 'required',
                 'kickhoat'=>'required',
 

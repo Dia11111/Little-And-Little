@@ -107,6 +107,11 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="//cdn.ckeditor.com/4.21.0/full/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('chitietsukien');
+        CKEDITOR.replace('mota');
+    </script>
     <script>
 
         $(document).ready(function()
@@ -162,6 +167,25 @@
                 document.getElementById('convert_slug').value = slug;
             }
                     
+    </script>
+    <script type="text/javascript">
+        var minusBtn = document.getElementById("minus-btn");
+        var plusBtn = document.getElementById("plus-btn");
+        var quantityInput = document.getElementById("quantity-input");
+
+        minusBtn.addEventListener("click", function() {
+        var currentValue = parseInt(quantityInput.value);
+        if (currentValue > 1) {
+            quantityInput.value = (currentValue - 1).toString();
+        }
+        });
+
+        plusBtn.addEventListener("click", function() {
+        var currentValue = parseInt(quantityInput.value);
+        if (currentValue < 100) {
+            quantityInput.value = (currentValue + 1).toString();
+        }
+        });
     </script>
 
 </body>

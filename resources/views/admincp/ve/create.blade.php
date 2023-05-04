@@ -3,7 +3,7 @@
 @section('content')
 @include('sidebar.ticket')
 <main class="col bg-faded py-3 flex-grow-1">
-    <br>
+    <a class="btn btn-secondary mb-2" onclick="window.location='{{ route('ve.index') }}'">Back</a>
 	<div class="card">
         <div class="card-header">Thêm vé</div>
         @if ($errors->any())
@@ -37,7 +37,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Mô tả</label>
-                    <textarea class="form-control" value="{{old('mota')}}" name="mota" style="resize: none" rows="5"></textarea>
+                    <textarea class="form-control" id="mota" value="{{old('mota')}}" name="mota" style="resize: none" rows="5"></textarea>
                 </div>
             
                 <div class="mb-3">
@@ -47,7 +47,12 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Số lượng</label>
-                    <input type="text" class="form-control" value="{{old('soluong')}}" name="soluong" aria-describedby="emailHelp" placeholder="Số lượng...">
+                    {{-- <input type="text" class="form-control" value="{{old('soluong')}}" name="soluong" aria-describedby="emailHelp" placeholder="Số lượng..."> --}}
+                    <div class="input-group">
+                        <button class="btn btn-outline-secondary" type="button" id="minus-btn">-</button>
+                        <input type="text" class="form-control text-center" value="1" name="soluong" min="1" max="100" id="quantity-input">
+                        <button class="btn btn-outline-secondary" type="button" id="plus-btn">+</button>
+                      </div>
                 </div>
 
                 <div class="mb-3">

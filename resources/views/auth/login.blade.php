@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center" style="margin-top: 110px;">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Đăng nhập') }}</div>
 

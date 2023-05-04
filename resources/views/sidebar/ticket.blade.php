@@ -6,7 +6,7 @@
                     <a class="nav-link pl-0 text-nowrap" href="{{route('home')}}"></i> <span class="font-weight-bold">Dashboard</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link pl-0" href="{{route('sukien.create')}}"><span class="d-none d-md-inline">Sự kiện</span></a>
+                    <a class="nav-link pl-0" href="{{route('sukien.index')}}"><span class="d-none d-md-inline">Sự kiện</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link pl-0" href="{{route('ve.index')}}"><span class="d-none d-md-inline">Vé</span></a>

@@ -3,7 +3,7 @@
 @section('content')
 @include('sidebar.event')
 <main class="col bg-faded py-3 flex-grow-1">
-    <br>
+    <a class="btn btn-secondary mb-2" onclick="window.location='{{ route('sukien.index') }}'">Back</a>
 	<div class="card">
         <div class="card-header">Thêm sự kiện</div>
         @if ($errors->any())
@@ -44,7 +44,7 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">chi tiết sự kiện</label>
-                    <textarea class="form-control" value="{{old('chitietsukien')}}" name="chitietsukien" style="resize: none" rows="5"></textarea>
+                    <textarea class="form-control" id="chitietsukien" value="{{old('chitietsukien')}}" name="chitietsukien" style="resize: none" rows="5"></textarea>
                 </div>
 
                 <div class="mb-3">

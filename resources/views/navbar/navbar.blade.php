@@ -7,8 +7,7 @@
     </button>
     <!-- Collection of nav links, forms, and other content for toggling -->
     <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-        
-            
+                    
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav me-auto">
@@ -51,6 +50,6 @@
                     @endguest
                 </ul>
             </div>
-        </div>		
+        
     </div>
 </nav>
