@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="{{asset('frontend/img/logo.svg')}}" style="height: 60px; margin-left: 50px;">
+        <img src="{{asset('images/logo.svg')}}" style="height: 60px; margin-left: 50px;">
     </a>  		
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>

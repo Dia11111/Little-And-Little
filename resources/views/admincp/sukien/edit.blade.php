@@ -56,12 +56,12 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Ngày diễn ra sự kiện</label>
-                    <input type="text" class="form-control" value="{{$event->ngaybatdau}}" name="ngaybatdau" aria-describedby="emailHelp" placeholder="Ngày bắt đầu sự kiện...">
+                    <input id="myID" type="text" class="form-control" value="{{$event->ngaybatdau}}" name="ngaybatdau" aria-describedby="emailHelp" placeholder="Ngày bắt đầu sự kiện...">
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Ngày kết thúc sự kiện</label>
-                    <input type="text" class="form-control" value="{{$event->ngayketthuc}}" name="ngayketthuc" aria-describedby="emailHelp" placeholder="Ngày kết thúc sự kiện...">
+                    <input id="myID" type="text" class="form-control" value="{{$event->ngayketthuc}}" name="ngayketthuc" aria-describedby="emailHelp" placeholder="Ngày kết thúc sự kiện...">
                 </div>
 
                 <div class="mb-3">

@@ -33,7 +33,16 @@
     <link rel="stylesheet" href="{{asset('css/nav.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
+<style>
+    .flatpickr-weekday {
+        color: #FF8A00 !important;
+    }
+    .flatpickr-day.selected{
+        background: #FF8A00 !important;
+    }
+</style>
 <body>
     {{-- <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -108,6 +117,7 @@
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     <script src="//cdn.ckeditor.com/4.21.0/full/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
         CKEDITOR.replace('chitietsukien');
         CKEDITOR.replace('mota');
@@ -185,6 +195,11 @@
         if (currentValue < 100) {
             quantityInput.value = (currentValue + 1).toString();
         }
+        });
+    </script>
+    <script>
+        flatpickr("#myID", {
+            dateFormat: "Y-m-d",
         });
     </script>
 

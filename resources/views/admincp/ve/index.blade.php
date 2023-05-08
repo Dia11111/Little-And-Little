@@ -67,7 +67,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        
+                        {{$ticket->links('pagination::bootstrap-4')}}
                         
                     </div>
                 </div>

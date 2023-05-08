@@ -15,7 +15,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        $event = Event::orderBy('id','DESC')->get();
+        $event = Event::orderBy('id','DESC')->paginate(5);
         return view('admincp.sukien.index')->with(compact('event'));
     }
 
@@ -126,8 +126,8 @@ class EventController extends Controller
     {
         $data = $request->validate(
             [
-                'tensukien' => 'required|unique:event|max:255',
-                'slug_sukien' => 'required|unique:event|max:255',
+                'tensukien' => 'required|max:255',
+                'slug_sukien' => 'required|max:255',
                 'chitietsukien' => 'required',
                 'giave' => 'required|numeric|min:0',
                 'tinhtrang' => 'required',
@@ -159,11 +159,10 @@ class EventController extends Controller
         $event->giave = $data['giave'];
         $event->ngaybatdau = $data['ngaybatdau'];
         $event->ngayketthuc = $data['ngayketthuc'];
-        $event->image = $data['image'];
 
         $get_image = $request->image;
         if($get_image){
-            $path = 'public/uploads/sukien'.$event->image;
+            $path = 'public/uploads/sukien/'.$event->image;
             if(file_exists($path)){
                 unlink($path);
             }
@@ -188,8 +187,8 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        $event = Ticket::find($id);
-        $path = 'public/uploads/sukien' .$event->image;
+        $event = Event::find($id);
+        $path = 'public/uploads/sukien/'. $event->image;
         if(file_exists($path)){
             unlink($path);
         }

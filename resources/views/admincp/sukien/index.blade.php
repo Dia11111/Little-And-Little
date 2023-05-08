@@ -73,7 +73,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        
+                        {{$event->links('pagination::bootstrap-4')}}
                         
                     </div>
                 </div>

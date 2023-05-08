@@ -1,0 +1,357 @@
+.all-body {
+    background-color: orange;
+}
+
+.container-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -97px;
+    position: relative;
+}
+
+.bg-image {
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 1;
+    position: relative;
+}
+
+.header-1 {
+    /* Đặt một màu nền mờ để tăng độ tương phản cho nội dung */
+    color: white;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    background-size: cover;
+    /* Đặt kích thước của hình nền cho phù hợp với phần header */
+    background-position: center center;
+    /* Đặt vị trí của hình nền ở giữa phần header */
+    background-repeat: no-repeat;
+    /* Không lặp lại hình nền */
+    margin-top: -7px;
+    z-index: 3;
+    position: relative;
+}
+
+.nav-menu-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6px;
+    padding: 11px;
+}
+
+.nav-menu-1 li {
+    display: inline-block;
+    list-style: none;
+    border-radius: 20px;
+    margin: 0 20px;
+}
+
+.nav-menu-1 li a {
+    display: block;
+    padding: 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav-menu-1 li :hover {
+    color: rgb(255, 255, 255, 0.7);
+    border: 2px;
+}
+
+.navbar-1 .logo {
+    float: left;
+    margin-left: -390px;
+}
+
+.header-phone {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    padding: 10px 10px 10px 40px;
+    font-weight: bold;
+}
+
+.phone-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 140px;
+    vertical-align: top;
+}
+
+li.current-page {
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+.dam-sen-container {
+    display: flex;
+    position: absolute;
+    /* đặt vị trí tuyệt đối */
+    top: 102px;
+    /* đặt vị trí top ở đỉnh container */
+    left: 25%;
+    /* đặt vị trí left ở giữa container */
+    transform: translateX(-50%);
+    /* dịch chuyển vị trí sang trái 50% độ rộng của hình ảnh */
+    z-index: 3;
+    align-items: center;
+}
+
+.dam-sen {
+    width: 181px;
+    height: 145px;
+    margin-right: 20px;
+}
+
+.dam-sen-text {
+    font-family: 'iCiel Koni', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    color: white;
+    font-size: 30px;
+    margin-right: 20px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.btn-login,
+.btn-register {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 7 px;
+    text-decoration: none;
+}
+
+.btn-login:hover,
+.btn-register:hover {
+    color: rgb(255, 255, 255, 0.7);
+}
+
+.login-register {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.pink-bollon {
+    position: absolute;
+    top: 224px;
+    left: 40px;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.red-bollon {
+    position: absolute;
+    top: 79px;
+    left: 58%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.yellow-bollon {
+    position: absolute;
+    top: 166px;
+    left: 48%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.green-bollon {
+    position: absolute;
+    top: 604px;
+    left: 36%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.yellow-2-bollon {
+    position: absolute;
+    top: 604px;
+    left: 95%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.yellow-3-bollon {
+    position: absolute;
+    top: 292px;
+    left: 98%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.ticket {
+    position: absolute;
+    top: 66%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+.lisa {
+    position: absolute;
+    top: 304px;
+    left: 6%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+.render {
+    position: absolute;
+    top: 91px;
+    left: 78%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.feature {
+    position: absolute;
+    top: 43%;
+    left: 76%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.feature-layout {
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    margin-top: 290px;
+    width: 100%;
+    /* chiều rộng 100% */
+    height: 400px;
+    /* chiều cao 400px */
+    left: 45px;
+    justify-content: space-evenly;
+}
+
+.feature-item-1 {
+    padding: 12px 16px;
+    margin-top: -12px;
+    width: 45%;
+    /* chiều rộng 50% */
+    height: 50%;
+    /* chiều cao 100% */
+    font-size: 15px;
+    margin-right: -192px;
+}
+
+.feature-item-2 {
+    padding: 12px 16px;
+    margin-top: -24px;
+    width: 25%;
+    /* chiều rộng 50% */
+    height: 50%;
+    /* chiều cao 100% */
+}
+
+
+/* Sự kiện */
+
+.title-head {
+    position: absolute;
+    top: 20%;
+    transform: translateY(-50%);
+    z-index: 4;
+    color: #fff;
+    font-weight: 900;
+    font-family: 'iCiel Koni', sans-serif;
+    font-size: 55px;
+}
+
+.frame-left {
+    position: absolute;
+    top: 24%;
+    left: 89%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.frame-right {
+    position: absolute;
+    top: 21%;
+    right: 64%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.frame-bg {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+
+/* Liên hệ */
+
+.alex {
+    position: absolute;
+    top: 253px;
+    left: 5%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+.contact-1 {
+    position: absolute;
+    top: 62%;
+    left: 41%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.contact-2 {
+    position: absolute;
+    top: 41%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.contact-3 {
+    position: absolute;
+    top: 62%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.contact-4 {
+    position: absolute;
+    top: 83%;
+    left: 83%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.box {
+    position: absolute;
+    top: 39%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    color: #23221F;
+    font-size: 16px;
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+.form-text {
+    position: absolute;
+    top: 64%;
+    left: 41%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
