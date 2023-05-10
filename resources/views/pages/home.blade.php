@@ -83,15 +83,12 @@
                     </div>
                 </div>
                 <div class="col-12 ">
-
                     <input type="text " class="form-control " id="inputAddress " placeholder="Họ và tên " required>
                 </div>
                 <div class="col-12 ">
-
                     <input type="text " class="form-control " id="inputAddress2 " placeholder="Số điện thoại " required>
                 </div>
                 <div class="col-12 ">
-
                     <input type="text " class="form-control " id="inputAddress " placeholder="Địa chỉ email "required>
                 </div>
 

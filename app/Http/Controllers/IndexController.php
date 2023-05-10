@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Ticket;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Event;
 
 class IndexController extends Controller
 {
@@ -15,7 +16,8 @@ class IndexController extends Controller
     }
 
     public function sukien(){
-        return view('pages.event');
+        $event = Event::orderBy('id','DESC')->where('kichhoat', 0)->get();
+        return view('pages.event')->with(compact('event'));
     }
 
     public function lienhe(){
