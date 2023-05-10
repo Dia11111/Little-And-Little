@@ -1,7 +1,7 @@
 @extends('../layout')
 
 @section('content')
-    
+
 <div class="container-1 ">
     <div class="dam-sen-container ">
         <img src="images/image-2@2x.png " class="dam-sen " alt="Đầm sen ">
@@ -62,7 +62,7 @@
                     <input type="text " class="form-control " id="inputAddress " placeholder="--Chọn vé-- ">
                 </div> -->
                 <div class="input-group ">
-                    <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="--Chọn vé-- ">
+                    <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="--Chọn vé-- " style="margin-right: 10px;" required>
                     <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
                     <ul class="dropdown-menu dropdown-menu-end">
                         @foreach($ticket as $key => $ve)
@@ -71,22 +71,28 @@
                     </ul>
                 </div>
                 <div class=" col-md-4 ">
-                    <input type="text " class="form-control " id="inputEmail4 " placeholder="Số lượng vé ">
+                    <input type="number " class="form-control " id="number " placeholder="Số lượng vé" min="0" max="1000" required>
                 </div>
                 <div class="col-md-8 ">
-                    <input type="text " class="form-control " id="inputPassword4 " placeholder="Ngày sử dụng ">
+                    <div class="input-group">
+                        <input id="myID" type="date " class="form-control" placeholder="Ngày sử dụng " style="margin-right: 10px;" required>
+                        <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item"></a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-12 ">
 
-                    <input type="text " class="form-control " id="inputAddress " placeholder="Họ và tên ">
+                    <input type="text " class="form-control " id="inputAddress " placeholder="Họ và tên " required>
                 </div>
                 <div class="col-12 ">
 
-                    <input type="text " class="form-control " id="inputAddress2 " placeholder="Số điện thoại ">
+                    <input type="text " class="form-control " id="inputAddress2 " placeholder="Số điện thoại " required>
                 </div>
                 <div class="col-12 ">
 
-                    <input type="text " class="form-control " id="inputAddress " placeholder="Địa chỉ email ">
+                    <input type="text " class="form-control " id="inputAddress " placeholder="Địa chỉ email "required>
                 </div>
 
                 <div class="d-grid gap-2 col-6 mx-auto ">

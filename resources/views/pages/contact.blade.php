@@ -39,6 +39,7 @@
     label {
         margin-bottom: 10px;
     }
+
 </style>
 <div class="container-1 ">
     <h1 class="title-head">Liên hệ</h1>
@@ -59,29 +60,50 @@
     </div>
 
     <div class="form-text">
-        <form class="">
+    {{-- @if (session('status'))
+        <div class="alert alert-light alert-dismissible fade show" role="alert ">
+            {{ session('status') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif --}}
+    @if (session('status'))
+    <div class="position-fixed top-50 start-50 translate-middle p-3" style="z-index: 11">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            <span>Gửi liên hệ thành công.</span>
+            <br>
+            {{ session('status') }}
+          </div>
+        </div>
+    </div>
+    @endif
+        <form method="POST" action="{{route('contact.send')}}" enctype="multipart/form-data">
+            @csrf
             <div class="row mb-3">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Tên" aria-label="First name">
+                    <input name="name" type="text" class="form-control" placeholder="Tên" aria-label="First name" required>
                 </div>
                 <div class="col">
-                    <input type="email" class="form-control" placeholder="Email" aria-label="Last name">
+                    <input name="email" type="email" class="form-control" placeholder="Email" aria-label="Last name" required>
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Số điện thoại" aria-label="First name">
+                    <input name="phone" type="text" class="form-control" placeholder="Số điện thoại" aria-label="First name" required>
                 </div>
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Địa chỉ" aria-label="Last name">
+                    <input name="address" type="text" class="form-control" placeholder="Địa chỉ" aria-label="Last name" required>
                 </div>
             </div>
             <div class="form-floating mb-3">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <textarea name="msg" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" required></textarea>
                 <label for="floatingTextarea2">Lời nhắn</label>
             </div>
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-danger">Gửi liên hệ</button>
+                <button id="liveToastBtn" type="submit" class="btn btn-danger">Gửi liên hệ</button>
             </div>
 
         </form>

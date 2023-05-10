@@ -21,6 +21,7 @@ use App\Http\Controllers\IndexController;
 Route::get('/', [IndexController::class, 'home']);
 Route::get('/su-kien',[IndexController::class, 'sukien'])->name('sukien');
 Route::get('/lien-he',[IndexController::class, 'lienhe'])->name('lienhe');
+Route::post('/gui-lien-he',[IndexController::class, 'sendEmail'])->name('contact.send');
 
 Auth::routes();
 
