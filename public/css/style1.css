@@ -301,6 +301,7 @@ li.current-page {
     z-index: 4;
 }
 
+
 /* Liên hệ */
 
 .alex {
@@ -426,4 +427,192 @@ li.current-page {
 
 .calendar-icon {
     color: orange;
+}
+
+
+/* Readevent */
+
+.flex-container {
+    display: flex;
+}
+
+.info {
+    flex: 1;
+    padding: 20px;
+}
+
+.description {
+    column-count: 3;
+    column-gap: 20px;
+    flex: 3;
+    padding: 20px;
+}
+
+.container {
+    background-color: #FFB489;
+    border-radius: 10px;
+    position: absolute;
+    top: 61%;
+    left: 50%;
+    right: -30%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+}
+
+
+/* Pay */
+
+.ticket-pay {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.feature-pay-1 {
+    position: absolute;
+    top: 35%;
+    left: 74%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.feature-pay-2 {
+    position: absolute;
+    top: 35%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.trini {
+    position: absolute;
+    top: 253px;
+    left: 6%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+.feature-layout-pay {
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    margin-top: 290px;
+    width: 100%;
+    /* chiều rộng 100% */
+    height: 400px;
+    /* chiều cao 400px */
+    left: 20px;
+    justify-content: space-evenly;
+    top: -32px;
+}
+
+.feature-item-pay-1 {
+    padding: 0px 29px;
+    margin-top: 28px;
+    width: 45%;
+    /* chiều rộng 50% */
+    height: 50%;
+    /* chiều cao 100% */
+    font-size: 15px;
+    margin-right: -192px;
+}
+
+.feature-item-pay-2 {
+    padding: 12px 16px;
+    margin-top: -26px;
+    width: 25%;
+    /* chiều rộng 50% */
+    height: 50%;
+    /* chiều cao 100% */
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: white !important;
+}
+
+
+/* Success pay */
+
+.success-pay {
+    position: absolute;
+    top: 58%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.alvin {
+    position: absolute;
+    top: 287px;
+    left: 3%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+.btn-group-1 {
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    margin-right: 10px;
+}
+
+#ticketCount {
+    position: absolute;
+    top: 82%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    margin-right: 10px;
+}
+
+#pageCount {
+    position: absolute;
+    top: 82%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    margin-right: 10px;
+}
+
+.owl-prev {
+    left: 1rem;
+}
+
+.owl-next {
+    right: 1rem;
+}
+
+.owl-prev,
+.owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+}
+
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+    background: 0 0;
+    color: white;
+    border: none;
+    padding: 0!important;
+    font: inherit;
+    background-color: black;
+    width: 20px;
+}
+
+.container-2 {
+    /* Các quy tắc CSS khác cho .container */
+    border-radius: 10px;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    right: -30%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    width: 923px;
 }

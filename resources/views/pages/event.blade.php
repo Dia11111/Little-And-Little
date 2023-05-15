@@ -3,18 +3,18 @@
 <div class="container-1">
     <h1 class="title-head">Sự kiện nổi bật</h1>
 
-    <img src="images/bg.svg" class="bg-image">
+    <img src="{{asset('images/bg.svg')}}" class="bg-image">
 
     <div class="frame-left">
-        <img src="images/frame-sk-left.svg" style="width: 318px;">
+        <img src="{{asset('images/frame-sk-left.svg')}}" style="width: 318px;">
     </div>
 
     <div class="frame-right">
-        <img src="images/frame-sk-right.svg" style="width: 325px;">
+        <img src="{{asset('images/frame-sk-right.svg')}}" style="width: 325px;">
     </div>
 
     <div class="frame-bg">
-        <img src="images/frame-bg.svg" style="width: 1000px;">
+        <img src="{{asset('images/frame-bg.svg')}}" style="width: 1000px;">
     </div>
     <div id="event-1" class="d-flex justify-content-center align-items-center">
         <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
@@ -30,7 +30,7 @@
                             <p class="card-text"><span style="color: #6C7272; font-size: 14px;">{{$value->diadiem}}</span></p>
                             <p class="card-text"><i class="fas fa-calendar calendar-icon"></i> {{$value->ngaybatdau}} - {{$value->ngayketthuc}}</p>
                             <p class="card-text"><span style="font-size: 25px; font-weight: bold; color: orange;">{{$value->giave}} VNĐ</span></p>
-                            <a href="#" class="btn btn-danger">Xem chi tiết</a>
+                            <a href="{{url('xem-su-kien/' .$value->slug_sukien)}}" class="btn btn-danger">Xem chi tiết</a>
                         </div>
                     </div>
                 </div>

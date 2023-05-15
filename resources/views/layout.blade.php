@@ -12,10 +12,15 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
-        <link rel="stylesheet" href="css/style1.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="{{asset('css/style1.css')}}" />
     </head>
     <style>
         .flatpickr-weekday {
@@ -25,11 +30,11 @@
             background: #FF8A00 !important;
         }
     </style>
-    <body class="all-body">
-    <header class="header-1" style="background-image: url('images/nav-bg.svg'); width: 103%; right: 20px; top: 7px;">
+<body class="all-body">
+    <header class="header-1" style="background-image: url('{{asset('images/nav-bg.svg')}}'); width: 103%; right: 20px; top: 7px;">
         <nav class="navbar-1 ">
             <a href="{{ url('/') }}" class="logo ">
-                <img src="images/little--little-logo-ngang-1@2x.png " style="width: 30%; " alt="Logo ">
+                <img src="{{asset('images/little--little-logo-ngang-1@2x.png ')}}" style="width: 30%; " alt="Logo ">
             </a>
             <ul class="nav-menu-1 ">
                 <li class="{{Request::is('/') ? 'current-page ':''}}"><a href="{{url('/')}}">Trang chủ</a></li>
@@ -38,7 +43,7 @@
             </ul>
             <div class="header-phone ">
                 <span class="phone-icon ">
-                    <img src="images/phone-icon.svg " style="width: 115px; ">
+                    <img src="{{asset('images/phone-icon.svg')}} " style="width: 115px; ">
                 </span>
                 {{-- <div class="login-register ">
                     <a href="# " class="btn-login ">Đăng nhập</a>
@@ -65,11 +70,33 @@
     </header>
     {{-- container --}}
     @yield('content')
+    
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM " crossorigin="anonymous "></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 2
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        })
+    </script>
     <script src="{{ asset('js/carousel.js') }}" defer></script>
     <script>
         var toastTrigger = document.getElementById('liveToastBtn')
@@ -87,5 +114,11 @@
             dateFormat: "Y-m-d",
         });
     </script>
-    </body>
+     <script>
+        function selectTicket(ticket) {
+            const selectedTicketInput = document.getElementById('selectedTicket');
+            selectedTicketInput.value = ticket;
+        }
+    </script>
+</body>
 </html>

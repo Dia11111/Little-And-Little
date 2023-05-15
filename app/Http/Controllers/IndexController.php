@@ -36,4 +36,9 @@ class IndexController extends Controller
         Mail::to('thocongnghe@gmail.com')->send(new ContactMail($details));
         return back()->with('status','Vui lòng kiên nhẫn đợi phản hồi từ chúng tôi, bạn nhé!');
     }
+
+    public function xemsukien($slug){
+        $event = Event::where('slug_sukien', $slug)->first();
+        return view('pages.details')->with(compact('event'));
+    }
 }

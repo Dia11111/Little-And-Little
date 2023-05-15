@@ -44,13 +44,13 @@
 <div class="container-1 ">
     <h1 class="title-head">Liên hệ</h1>
     <div class="alex">
-        <img src="images/alex-ar-lay-do-shadow-1@2x.png" style="width: 318px;">
+        <img src="{{asset('images/alex-ar-lay-do-shadow-1@2x.png')}}" style="width: 318px;">
     </div>
 
-    <img src="images/bg.svg " class="bg-image ">
+    <img src="{{asset('images/bg.svg')}} " class="bg-image ">
 
     <div class="contact-1">
-        <img src="images/contact-bg.svg" style="height: 463px;">
+        <img src="{{asset('images/contact-bg.svg')}}" style="height: 463px;">
     </div>
 
     <div class="box">
@@ -111,15 +111,15 @@
     </div>
 
     <div class="contact-2">
-        <img src="images/address.svg" style="width: 350px;">
+        <img src="{{asset('images/address.svg')}}" style="width: 350px;">
     </div>
 
     <div class="contact-3">
-        <img src="images/email.svg" style="width: 350px;">
+        <img src="{{asset('images/email.svg')}}" style="width: 350px;">
     </div>
 
     <div class="contact-4">
-        <img src="images/phone.svg" style="width: 350px;">
+        <img src="{{asset('images/phone.svg')}}" style="width: 350px;">
     </div>
 
 </div>
