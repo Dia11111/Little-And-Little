@@ -21,12 +21,18 @@ use App\Http\Controllers\IndexController;
 Route::get('/', [IndexController::class, 'home']);
 Route::get('/su-kien',[IndexController::class, 'sukien'])->name('sukien');
 Route::get('/lien-he',[IndexController::class, 'lienhe'])->name('lienhe');
-Route::post('/gui-lien-he',[IndexController::class, 'sendEmail'])->name('contact.send');
 Route::get('/xem-su-kien/{slug}',[IndexController::class, 'xemsukien']);
+Route::get('/thanh-toan',[IndexController::class, 'pay'])->name('pay');
+Route::get('/thanh-toan-thanh-cong',[IndexController::class, 'successpay'])->name('successpay');
+
+Route::post('/dat-ve',[IndexController::class, 'checkout'])->name('checkout');
+Route::post('/dat-ve-thanh-cong',[IndexController::class, 'checkout_success'])->name('checkout_success');
+Route::post('/gui-lien-he',[IndexController::class, 'sendEmail'])->name('contact.send');
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Route::resource('/sukien', EventController::class);
-Route::resource('/ve', TicketController::class);
+Route::middleware('admin')->group(function () {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::resource('/sukien', EventController::class);
+    Route::resource('/ve', TicketController::class);
+});

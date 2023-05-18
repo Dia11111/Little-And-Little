@@ -7,6 +7,8 @@ use App\Models\Ticket;
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Event;
+use App\Models\Customer;
+use App\Models\Payment;
 
 class IndexController extends Controller
 {
@@ -40,5 +42,55 @@ class IndexController extends Controller
     public function xemsukien($slug){
         $event = Event::where('slug_sukien', $slug)->first();
         return view('pages.details')->with(compact('event'));
+    }
+
+    public function pay(){
+        $customer = Customer::latest('created_at')->first();
+        $ticketId = $customer->ve_id;
+        $ticket = Ticket::find($ticketId);
+
+        $ticket_name = $ticket->tenve;
+
+        $totalAmount = $ticket->giave * $customer->soluongve;
+
+        return view('pages.pay',['customer' => $customer, 'totalAmount' => $totalAmount, 'ticket_name' => $ticket_name]);   
+    }
+
+    public function successpay(){
+
+        return view('pages.success_pay');   
+    }
+
+    public function checkout(Request $request){
+
+        $data = new Customer;
+        // dd($request->all());
+        $data->hoten = $request->hoten;
+        $data->soluongve=$request->soluongve;
+        $data->diachi = $request->diachi;
+        $data->sodienthoai=$request->sodienthoai;
+        $data->ngaysudung=$request->ngaysudung;
+        $data->ve_id = $request->ve_id;
+
+        $data->save();
+
+        return redirect()->route('pay');
+    }
+
+    public function checkout_success(Request $request){
+
+        $data = new Payment();
+        // dd($request->all());
+        $data->sothe = $request->sothe;
+        $data->hotenthe=$request->hotenthe;
+        $data->ngayhethan = $request->ngayhethan;
+        $data->cvv=$request->cvv;
+        $data->order_code=$request->order_code;
+        $data->tongtien = $request->tongtien;
+        $data->customer_id = $request->customer_id;
+
+        $data->save();
+
+        return redirect()->route('successpay');
     }
 }

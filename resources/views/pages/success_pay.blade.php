@@ -27,8 +27,10 @@
                     <div class="card">
                         <img src="{{asset('images/image-3@2x.png')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p>Deana B. Eby</p>
+                            <p>ALT20210501</p>
+                            <p>VÉ CỔNG</p>
                             <p>---</p>
+                            <p>Ngày sử dụng: 31/05/2021</p>
                         </div>
                     </div>
                 </div>
@@ -36,8 +38,10 @@
                     <div class="card">
                         <img src="{{asset('images/image-3@2x.png')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p>Deana B. Eby</p>
+                            <p>ALT20210501</p>
+                            <p>VÉ CỔNG</p>
                             <p>---</p>
+                            <p>Ngày sử dụng: 31/05/2021</p>
                         </div>
                     </div>
                 </div>
@@ -45,8 +49,10 @@
                     <div class="card">
                         <img src="{{asset('images/image-3@2x.png')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p>Deana B. Eby</p>
+                            <p>ALT20210501</p>
+                            <p>VÉ CỔNG</p>
                             <p>---</p>
+                            <p>Ngày sử dụng: 31/05/2021</p>
                         </div>
                     </div>
                 </div>
@@ -54,8 +60,10 @@
                     <div class="card">
                         <img src="{{asset('images/image-3@2x.png')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p>Deana B. Eby</p>
+                            <p>ALT20210501</p>
+                            <p>VÉ CỔNG</p>
                             <p>---</p>
+                            <p>Ngày sử dụng: 31/05/2021</p>
                         </div>
                     </div>
                 </div>
@@ -63,8 +71,10 @@
                     <div class="card">
                         <img src="{{asset('images/image-3@2x.png')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p>Deana B. Eby</p>
+                            <p>ALT20210501</p>
+                            <p>VÉ CỔNG</p>
                             <p>---</p>
+                            <p>Ngày sử dụng: 31/05/2021</p>
                         </div>
                     </div>
                 </div>
@@ -72,8 +82,10 @@
                     <div class="card">
                         <img src="{{asset('images/image-3@2x.png')}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p>Deana B. Eby</p>
+                            <p>ALT20210501</p>
+                            <p>VÉ CỔNG</p>
                             <p>---</p>
+                            <p>Ngày sử dụng: 31/05/2021</p>
                         </div>
                     </div>
                 </div>

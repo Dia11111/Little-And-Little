@@ -25,7 +25,7 @@
 
 <main class="col bg-faded py-3 flex-grow-1">
     <br>
-	<div class="card">
+	{{-- <div class="card">
         <div class="card-body">
           <div class="signup-form" >
             <form action="" method="post" class="form-horizontal">
@@ -35,13 +35,11 @@
                   <h2>Personal</h2>
                 </div>
               </div>
-              {{-- success --}}
               @if(\Session::has('insert'))
                 <div id="insert" class=" alert alert-success">
                   {!! \Session::get('insert') !!}
                 </div>
               @endif
-              {{-- error --}}
               @if(\Session::has('error'))
                 <div id="error" class=" alert alert-danger">
                   {!! \Session::get('error') !!}
@@ -88,7 +86,7 @@
             </form>
           </div>
         </div>
-    </div>
+    </div> --}}
 
 
     {{-- hide message js --}}

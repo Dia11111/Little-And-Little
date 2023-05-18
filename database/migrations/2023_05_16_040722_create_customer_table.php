@@ -15,6 +15,13 @@ class CreateCustomerTable extends Migration
     {
         Schema::create('customer', function (Blueprint $table) {
             $table->id();
+            $table->string('hoten');
+            $table->integer('soluongve');
+            $table->string('diachi');
+            $table->string('sodienthoai');
+            $table->date('ngaysudung');
+            $table->unsignedBigInteger('ve_id');
+            $table->foreign('ve_id')->references('id')->on('ticket');
             $table->timestamps();
         });
     }

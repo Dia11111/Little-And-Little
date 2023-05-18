@@ -15,4 +15,8 @@ class Ticket extends Model
     ];
     protected $primaryKey = 'id';
     protected $table = 'ticket';
+
+    public function customer() {
+        return $this->hasMany(Customer::class);
+    }
 }

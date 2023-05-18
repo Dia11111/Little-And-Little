@@ -125,7 +125,8 @@ li.current-page {
 }
 
 .btn-login,
-.btn-register {
+.btn-register,
+.btn-logout {
     display: inline-block;
     color: #fff;
     padding: 10px 7 px;
@@ -472,7 +473,7 @@ li.current-page {
 
 .feature-pay-1 {
     position: absolute;
-    top: 35%;
+    top: 34%;
     left: 74%;
     transform: translate(-50%, -50%);
     z-index: 5;
@@ -480,7 +481,7 @@ li.current-page {
 
 .feature-pay-2 {
     position: absolute;
-    top: 35%;
+    top: 34%;
     left: 28%;
     transform: translate(-50%, -50%);
     z-index: 5;
@@ -521,7 +522,7 @@ li.current-page {
 
 .feature-item-pay-2 {
     padding: 12px 16px;
-    margin-top: -26px;
+    margin-top: -33px;
     width: 25%;
     /* chiều rộng 50% */
     height: 50%;
@@ -615,4 +616,23 @@ li.current-page {
     transform: translate(-50%, -50%);
     z-index: 4;
     width: 923px;
+}
+
+.highlight {
+    font-weight: bold;
+    text-align: center;
+}
+
+.highlight p {
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}
+
+.content p::before {
+    content: "\f005";
+    /* Mã Unicode của ký tự ngôi sao trong Font Awesome */
+    font-family: "Font Awesome 5 Free";
+    margin-right: 5px;
+    color: gold;
 }

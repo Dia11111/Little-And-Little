@@ -1,0 +1,17 @@
+/* .highlight {
+    font-weight: bold;
+    text-align: center;
+}
+
+.highlight p {
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}
+
+.content p::before {
+    content: "\f005";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 5px;
+    color: gold;
+} */
