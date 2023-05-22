@@ -20,4 +20,9 @@ class Customer extends Model
     {
         return $this->belongsTo(Ticket::class, 've_id');
     }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

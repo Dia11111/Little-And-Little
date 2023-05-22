@@ -81,24 +81,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <script>
-        $('.owl-carousel').owlCarousel({
+        var totalPages = {{$totalPages}};
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
             loop: false,
             margin: 10,
             nav: true,
             dots: false,
             responsive: {
                 0: {
-                    items: 2
+                    items: 1
                 },
                 600: {
-                    items: 3
+                    items: 2
                 },
                 1000: {
-                    items: 5
+                    items: 4
                 }
             }
-        })
+            
+        });
+
+        owl.on('changed.owl.carousel', function(event) {
+            var currentPageElement = document.getElementById("currentPage");
+            var currentSlideIndex = event.item.index;
+            var currentSlideNumber = currentSlideIndex + 1;
+
+            var currentPage = currentSlideNumber > totalPages ? totalPages : currentSlideNumber;
+            currentPageElement.innerHTML = currentPage;
+        });
+        
+        
     </script>
+
     <script src="{{ asset('js/carousel.js') }}" defer></script>
     <script>
         var toastTrigger = document.getElementById('liveToastBtn')
@@ -116,12 +131,12 @@
             dateFormat: "Y-m-d",
         });
     </script>
-     <script>
+    {{-- <script>
         function selectTicket(ticket) {
             const selectedTicketInput = document.getElementById('selectedTicket');
             selectedTicketInput.value = ticket;
         }
-    </script>
+    </script> --}}
     <script>
         var input = document.getElementById('DatePicked');
         var button = document.getElementById('myButton');

@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\IndexController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,8 @@ Route::get('/lien-he',[IndexController::class, 'lienhe'])->name('lienhe');
 Route::get('/xem-su-kien/{slug}',[IndexController::class, 'xemsukien']);
 Route::get('/thanh-toan',[IndexController::class, 'pay'])->name('pay');
 Route::get('/thanh-toan-thanh-cong',[IndexController::class, 'successpay'])->name('successpay');
+Route::get('/chi-tiet-ve',[IndexController::class, 'chitietve'])->name('chitietve');
+Route::get('/in-don-ve/{checkout_code}',[IndexController::class, 'indonve'])->name('indonve');
 
 Route::post('/dat-ve',[IndexController::class, 'checkout'])->name('checkout');
 Route::post('/dat-ve-thanh-cong',[IndexController::class, 'checkout_success'])->name('checkout_success');
