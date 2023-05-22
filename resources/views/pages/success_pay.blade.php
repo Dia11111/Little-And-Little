@@ -17,7 +17,7 @@
 
     <div class="btn-group-1" role="group" aria-label="Basic example">
         <a target="_blank" href="{{ url('/in-don-ve/' .$payment->order_code) }}" type="button" class="btn btn-danger me-3">Tải về</a>
-        <a type="button"  href="" class="btn btn-danger">Gửi Email</a>
+        <a type="button"  href="{{route('email_order')}}" class="btn btn-danger">Gửi Email</a>
     </div>
 
     <div class="container-2 mt-5">

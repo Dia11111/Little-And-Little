@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
 use App\Mail\ContactMail;
+use App\Mail\OrderEmail;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Event;
 use App\Models\Customer;
@@ -60,11 +61,16 @@ class IndexController extends Controller
         $ticketId = $customer->ve_id;
         $ticket = Ticket::find($ticketId);
 
+        $ticketCount = Customer::latest()->value('soluongve');
+
+        $itemsPerPage = 4; // Số lượng vé trên mỗi trang
+        $totalPages = ceil($ticketCount / $itemsPerPage); // Tổng số trang
+
         $ticket_name = $ticket->tenve;
 
         $totalAmount = $ticket->giave * $customer->soluongve;
 
-        return view('pages.pay',['customer' => $customer, 'totalAmount' => $totalAmount, 'ticket_name' => $ticket_name]);   
+        return view('pages.pay',['customer' => $customer, 'totalAmount' => $totalAmount, 'ticket_name' => $ticket_name,'totalPages' => $totalPages]);   
     }
 
     public function chitietve(){
@@ -166,6 +172,7 @@ class IndexController extends Controller
         $ngaysudung = $customer->ngaysudung;
         $orderCode = $payment->order_code;
         $soluongve = $customer->soluongve;
+        $ticket_name = $ticket->tenve;
 
         $output = '';
 
@@ -174,6 +181,7 @@ class IndexController extends Controller
         $output .= '</style>';
         $output .= '<h1>Chi tiết vé</h1>';
         $output .= '<p>Mã vé: ' . $orderCode . '</p>';
+        $output .= '<p>Loại vé: ' . $ticket_name . '</p>';
         $output .= '<p>Họ tên: ' . $customer->hoten . '</p>';
         $output .= '<p>Email: ' . $customer->diachi . '</p>';
         $output .= '<p>Số điện thoại: ' . $customer->sodienthoai . '</p>';
@@ -182,5 +190,31 @@ class IndexController extends Controller
         $output .= '<p>Tổng tiền: ' . $payment->tongtien . '</p>';
 
         return $output;
+    }
+
+    public function email_order(Request $request){
+        $customer = Customer::latest('created_at')->first();
+        $payment = Payment::latest('created_at')->first();
+        $ticketId = $customer->ve_id;
+        $ticket = Ticket::find($ticketId);
+        
+        // $ngaysudung = $customer->ngaysudung;
+        // $orderCode = $payment->order_code;
+        // $soluongve = $customer->soluongve;
+        // $ticket_name = $ticket->tenve;
+
+        $orderInfo = [
+            'ticket_code' => $payment->order_code,
+            'ticket_name' => $ticket->tenve,
+            'full_name' => $customer->hoten,
+            'phone_number' => $customer->sodienthoai,
+            'email' => $customer->diachi,
+            'date_use' => $customer->ngaysudung,
+            'quantity' => $payment->soluongve,
+            'total_amount' => $payment->tongtien,
+        ];
+        Mail::to($customer->diachi)->send(new OrderEmail($orderInfo));
+
+        return redirect()->back();
     }
 }

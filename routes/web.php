@@ -27,6 +27,7 @@ Route::get('/thanh-toan',[IndexController::class, 'pay'])->name('pay');
 Route::get('/thanh-toan-thanh-cong',[IndexController::class, 'successpay'])->name('successpay');
 Route::get('/chi-tiet-ve',[IndexController::class, 'chitietve'])->name('chitietve');
 Route::get('/in-don-ve/{checkout_code}',[IndexController::class, 'indonve'])->name('indonve');
+Route::get('/gui-email-don-hang', [IndexController::class, 'email_order'])->name('email_order');
 
 Route::post('/dat-ve',[IndexController::class, 'checkout'])->name('checkout');
 Route::post('/dat-ve-thanh-cong',[IndexController::class, 'checkout_success'])->name('checkout_success');

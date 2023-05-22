@@ -8,11 +8,13 @@
 </head>
 <body>
     <h1>Đơn hàng</h1>
-    <p>Mã vé: </p>
-    <p>Họ tên: </p>
-    <p>số điện thoại: </p>
-    <p>Email: </p>
-    <p>Số lượng vé: </p>
-    <p>Tổng tiền: </p>
+    <p>Mã vé: {{ $orderInfo['ticket_code'] }}</p>
+    <p>Tên vé: {{$orderInfo['ticket_name']}}</p>
+    <p>Họ tên: {{ $orderInfo['full_name'] }}</p>
+    <p>Số điện thoại: {{ $orderInfo['phone_number'] }}</p>
+    <p>Email: {{ $orderInfo['email'] }}</p>
+    <p>Số lượng vé: {{ $orderInfo['quantity'] }}</p>
+    <p>Ngày sủ dụng: {{$orderInfo['date_use']}}</p>
+    <p>Tổng tiền: {{ $orderInfo['total_amount'] }}</p>
 </body>
 </html>

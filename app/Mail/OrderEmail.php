@@ -10,15 +10,15 @@ use Illuminate\Queue\SerializesModels;
 class OrderEmail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $orderInfo;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($orderInfo)
     {
-        //
+        $this->orderInfo = $orderInfo;
     }
 
     /**
@@ -28,6 +28,6 @@ class OrderEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->subject('Thông tin đơn hàng của bạn')->view('email.checkoutmail');
     }
 }
