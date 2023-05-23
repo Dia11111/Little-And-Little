@@ -64,10 +64,20 @@
         </div>
         <div class="feature-item-pay-2">
             <h1 class="text-center " style="font-size: 23px; color: white;">Thông tin thanh toán</h1>
-            @if (session('error'))
-                <div class="alert alert-danger">
+            {{-- @if (session('error'))
+                <div class="alert alert-danger alert-floating">
                     {{ session('error') }}
                 </div>
+            @endif --}}
+            @if (session('error'))
+            <div class="alert alert-warning fade show" role="alert">
+                <div class="header-noti">
+                    <img src="{{asset('images/sad-emoji-1.svg')}}" alt="Header Image">
+                </div>
+                <div class="body-noti">
+                    {{ session('error') }}
+                </div>
+            </div> 
             @endif
             <form class="row g-3 "action="{{route('checkout_success')}}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -84,7 +94,7 @@
                 <div class="col-12 mt-1">
                     <label for="formGroupExampleInput" class="form-label">Ngày hết hạn</label>
                     <div class="input-group">
-                        <input type="text" id="DatePicked" class="form-control me-3" name="ngayhethan" placeholder="Ngày hết hạn" required>
+                        <input type="text" id="DatePicked" class="form-control me-3" name="ngayhethan" placeholder="Ngày hết hạn" required readonly>
                         <a class="btn btn-warning rounded-3" type="button" id="myButton" aria-expanded="false">
                             <i class="fas fa-calendar" style="color: white;"></i>
                         </a>

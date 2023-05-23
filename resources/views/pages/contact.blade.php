@@ -60,25 +60,14 @@
     </div>
 
     <div class="form-text">
-    {{-- @if (session('status'))
-        <div class="alert alert-light alert-dismissible fade show" role="alert ">
-            {{ session('status') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif --}}
+
     @if (session('status'))
-    <div class="position-fixed top-50 start-50 translate-middle p-3" style="z-index: 11">
-        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="toast-header">
-            <button type="button" class="btn-close ms-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-          <div class="toast-body">
-            <span>Gửi liên hệ thành công.</span>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <a type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></a>
             <br>
+            <p>Gửi liên hệ thành công.</p>
             {{ session('status') }}
-          </div>
         </div>
-    </div>
     @endif
         <form method="POST" action="{{route('contact.send')}}" enctype="multipart/form-data">
             @csrf

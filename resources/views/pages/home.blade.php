@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-md-8 ">
                     <div class="input-group">
-                        <input name="ngaysudung" type="text " class="form-control" id="DatePicked" placeholder="Ngày sử dụng " style="margin-right: 10px;" required>
+                        <input name="ngaysudung" type="text " class="form-control" id="DatePicked" placeholder="Ngày sử dụng " style="margin-right: 10px;" required readonly>
                         <a id="myButton" class="btn btn-warning rounded-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-calendar" style="color: white;"></i>
                         </a>

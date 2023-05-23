@@ -30,12 +30,22 @@ class IndexController extends Controller
     }
 
     public function sukien(){
+        $ticketCount = Customer::latest()->value('soluongve');
+
+        $itemsPerPage = 4; // Số lượng vé trên mỗi trang
+        $totalPages = ceil($ticketCount / $itemsPerPage); // Tổng số trang
+
         $event = Event::orderBy('id','DESC')->where('kichhoat', 0)->get();
-        return view('pages.event')->with(compact('event'));
+        return view('pages.event')->with(compact('event','totalPages'));
     }
 
     public function lienhe(){
-        return view('pages.contact');
+        $ticketCount = Customer::latest()->value('soluongve');
+
+        $itemsPerPage = 4; // Số lượng vé trên mỗi trang
+        $totalPages = ceil($ticketCount / $itemsPerPage); // Tổng số trang
+
+        return view('pages.contact')->with(compact('totalPages'));
     }
 
     public function sendEmail(Request $req){
@@ -149,12 +159,12 @@ class IndexController extends Controller
 
             return redirect()->route('successpay');
         }catch(Exception $e){
-            $request->session()->flash('error', 'Có lỗi xảy ra trong quá trình thanh toán. Vui lòng thử lại sau!');
+            $request->session()->flash('error', 'Hình như đã có lỗi xảy ra khi thanh toán...
+            Vui lòng kiểm tra lại thông tin liên hệ, thông tin thẻ và thử lại.');
             
             return redirect()->back();
         }
-            
-        
+              
     }
 
     public function indonve($checkout_code){
