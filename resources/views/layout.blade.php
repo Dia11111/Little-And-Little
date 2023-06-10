@@ -6,6 +6,7 @@
 
         <title>Little and Little</title>
 
+        <link rel="shortcut icon" href="{{ asset('images/logo.svg') }}" type="image/x-icon">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" />
@@ -21,7 +22,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous"
         referrerpolicy="no-referrer" />
         
-        {{-- <link rel="stylesheet" href="{{asset('css/style2.css')}}"> --}}
         <link rel="stylesheet" href="{{asset('css/style1.css')}}">
     </head>
     <style>

@@ -63,7 +63,12 @@ class IndexController extends Controller
 
     public function xemsukien($slug){
         $event = Event::where('slug_sukien', $slug)->first();
-        return view('pages.details')->with(compact('event'));
+
+        $ticketCount = Customer::latest()->value('soluongve');
+
+        $itemsPerPage = 4; // Số lượng vé trên mỗi trang
+        $totalPages = ceil($ticketCount / $itemsPerPage); // Tổng số trang
+        return view('pages.details')->with(compact('event','totalPages'));
     }
 
     public function pay(){

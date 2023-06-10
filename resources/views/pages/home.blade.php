@@ -79,11 +79,12 @@
                 </div> --}}
                 <div class="col-12 ">
                     <select name="ve_id" class="form-select" aria-label="Default select example">
-                        <option selected>--Chọn vé-- </option>
+                        <option selected disabled>--Chọn vé-- </option>
                         @foreach($ticket as $key => $ve)
                         <option value="{{$ve->id}}">{{$ve->tenve}}</option>
                         @endforeach
                     </select>
+                    
                 </div>
                 <div class=" col-md-4 ">
                     <input type="number " class="form-control " name="soluongve" placeholder="Số lượng vé" min="0" max="1000" required>

@@ -22,7 +22,7 @@
                 <img src="{{asset('public/uploads/sukien/' .$event->image)}}" alt="Ảnh" width="250px" height="200px" style="border-radius: 10px;">
                 <p class="card-text"><i class="fas fa-calendar calendar-icon"></i> {{$event->ngaybatdau}} - {{$event->ngayketthuc}}</p>
                 <p class="card-text"><span style="color: #6C7272; font-size: 14px;">{{$event->diadiem}}</span></p>
-                <p class="card-text"><span style="font-size: 25px; font-weight: bold; color: orange;">{{$event->giave}}</span></p>
+                <p class="card-text"><span style="font-size: 25px; font-weight: bold; color: orange;">{{$event->giave}} VNĐ</span></p>
             </div>
             <div class="description">
                 <p>{!!$event->chitietsukien!!}</p>
