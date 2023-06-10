@@ -64,11 +64,7 @@
         </div>
         <div class="feature-item-pay-2">
             <h1 class="text-center " style="font-size: 23px; color: white;">Thông tin thanh toán</h1>
-            {{-- @if (session('error'))
-                <div class="alert alert-danger alert-floating">
-                    {{ session('error') }}
-                </div>
-            @endif --}}
+           
             @if (session('error'))
             <div class="alert alert-warning fade show" role="alert">
                 <div class="header-noti">
@@ -79,6 +75,7 @@
                 </div>
             </div> 
             @endif
+            
             <form class="row g-3 "action="{{route('checkout_success')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="col-12 mt-2">

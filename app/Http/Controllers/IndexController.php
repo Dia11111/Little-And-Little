@@ -137,7 +137,7 @@ class IndexController extends Controller
     }
 
     public function checkout_success(Request $request){
-        try{
+        
             $customer = Customer::latest('created_at')->first();
             $customerId = $customer->id; // Lấy ID của khách hàng vừa tìm được
 
@@ -163,12 +163,21 @@ class IndexController extends Controller
             $foundCustomer->payments()->save($data); 
 
             return redirect()->route('successpay');
-        }catch(Exception $e){
-            $request->session()->flash('error', 'Hình như đã có lỗi xảy ra khi thanh toán...
-            Vui lòng kiểm tra lại thông tin liên hệ, thông tin thẻ và thử lại.');
+
+            // Payment success
+            if ($foundCustomer->payments()->save($data)) {
+                return redirect()->route('successpay')->with('success', 'Payment successful!');
+            } else {
+                return redirect()->back()->with('error', 'Hình như đã có lỗi xảy ra khi thanh toán...
+                Vui lòng kiểm tra lại thông tin liên hệ, thông tin thẻ và thử lại.');
+            }
+        // try{
+        // }catch(Exception $e){
+        //     $request->session()->flash('error', 'Hình như đã có lỗi xảy ra khi thanh toán...
+        //     Vui lòng kiểm tra lại thông tin liên hệ, thông tin thẻ và thử lại.');
             
-            return redirect()->back();
-        }
+        //     return redirect()->back();
+        // }
               
     }
 
@@ -212,11 +221,6 @@ class IndexController extends Controller
         $payment = Payment::latest('created_at')->first();
         $ticketId = $customer->ve_id;
         $ticket = Ticket::find($ticketId);
-        
-        // $ngaysudung = $customer->ngaysudung;
-        // $orderCode = $payment->order_code;
-        // $soluongve = $customer->soluongve;
-        // $ticket_name = $ticket->tenve;
 
         $orderInfo = [
             'ticket_code' => $payment->order_code,
