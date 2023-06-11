@@ -162,11 +162,11 @@ class IndexController extends Controller
 
             $foundCustomer->payments()->save($data); 
 
-            return redirect()->route('successpay');
+            // return redirect()->route('successpay');
 
             // Payment success
             if ($foundCustomer->payments()->save($data)) {
-                return redirect()->route('successpay')->with('success', 'Payment successful!');
+                return redirect()->route('successpay');
             } else {
                 return redirect()->back()->with('error', 'Hình như đã có lỗi xảy ra khi thanh toán...
                 Vui lòng kiểm tra lại thông tin liên hệ, thông tin thẻ và thử lại.');
